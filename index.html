@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery Helper Bot</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      max-width: 400px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🍔 Food Delivery Helper Bot</h1>
+    <p>
+      Chat with our AI assistant to discover meals, compare options,
+      and order food بسهولة.
+    </p>
+    <p><b>Click the chat icon on the bottom right to get started!</b></p>
+  </div>
+
+  <!-- Watson Assistant Chat Integration -->
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "6ddd1b72-55e3-4316-9836-f49eb736cc1a",
+      region: "au-syd",
+      serviceInstanceID: "3617a405-59aa-4f8a-90fa-e89fe97f6f61",
+      onLoad: async (instance) => { await instance.render(); }
+    };
+
+    setTimeout(function () {
+      const t = document.createElement('script');
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+              (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+              "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+</body>
+</html>
